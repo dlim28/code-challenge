@@ -4,7 +4,9 @@
 </script>
 
 <nav class="flex flex-col py-4 justify-center items-center bg-red-700">
-	<button class="w-1/3" on:click={() => {hidden = !hidden}}>User Icon</button>
+	<button class="w-1/3 flex items-center justify-center" on:click={() => {hidden = !hidden}}>
+		<img src="/src/images/user-icon.svg" alt="A user profile icon" width="50" height="50" />
+	</button>
 	{#if !hidden}
 		<ul transition:slide>
 			<li>User Option 1</li>
