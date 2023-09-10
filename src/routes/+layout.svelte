@@ -1,6 +1,14 @@
 <script>
 	import { slide } from 'svelte/transition'
+	import Dialog from "$lib/components/dialog.svelte";
+	import {onMount} from "svelte";
+
 	let hidden = true;
+	let coinDialog;
+
+	onMount(() => {
+		coinDialog = document.getElementById("coinDialog")
+	})
 </script>
 
 <nav class="flex flex-col py-4 justify-center items-center bg-red-700">
@@ -11,10 +19,12 @@
 		<ul transition:slide>
 			<li>User Option 1</li>
 			<li>User Option 2</li>
-			<li on:click={() => {console.log('open dialog')}}>Preferred Coin</li>
+			<li on:click={() => {coinDialog.showModal()}}>Preferred Coin</li>
 			<li>User Option 4</li>
 		</ul>
 	{/if}
 </nav>
 
 <slot />
+
+<Dialog dialogId="coinDialog" closeModal="{() => {coinDialog.close()}}"/>
