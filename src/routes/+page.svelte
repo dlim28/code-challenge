@@ -1,6 +1,5 @@
 <script lang="ts">
 	import "../app.css"
-	import { preferredCoinData } from "$lib/store.ts";
 	import {browser} from "$app/environment";
 
 	const getCoin = async (coin: string | null) => {
@@ -9,19 +8,23 @@
 	}
 </script>
 
+<style>
+	body {
+		background: #f9fafb;
+	}
+</style>
+
 {#if browser}
 	{#await getCoin(window.localStorage.getItem('preferredCoin') ? window.localStorage.getItem('preferredCoin') : 'btc')}
-	<h1>WAiting</h1>
+	<h1>Waiting</h1>
 	{:then data}
-		<div class="rounded shadow-lg">
-			<div class="flex flex-col items-center justify-center px-6 py-4 mt-6 border border-red-500">
-				<img src="src/images/user-icon.svg" alt="A Placeholder" width="100" height="100">
-				<h1 class="text-lg">{data.buy}</h1>
-				<h2 class="font-semibold text-xl italic">{data.ask.toFixed(3)}</h2>
-			</div>
+		<div class="flex inset-1 flex-col rounded-xl mx-2 shadow-2xl items-center justify-center px-6 py-4 mt-6">
+			<img src="src/images/user-icon.svg" alt="A Placeholder" width="100" height="100">
+			<h1 class="text-lg">{data.buy}</h1>
+			<h2 class="font-semibold text-xl italic">{data.ask.toFixed(3)}</h2>
 		</div>
 
-		<div class="flex flex-col rounded shadow-2xl my-4 p-4 gap-y-2 border border-red-500">
+		<div class="flex flex-col rounded-xl mx-2 shadow-2xl my-4 p-4 gap-y-2">
 			<div class="flex flex-row justify-evenly">
 				<div class="flex flex-col text-center p-4">
 					<p>Bid</p>

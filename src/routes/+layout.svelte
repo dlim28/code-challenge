@@ -16,11 +16,11 @@
 		<img src="/src/images/user-icon.svg" alt="A user profile icon" width="50" height="50" />
 	</button>
 	{#if !hidden}
-		<ul transition:slide class="text-zinc-200">
-			<li class="py-1">User Option 1</li>
-			<li class="py-1">User Option 2</li>
+		<ul transition:slide class="flex flex-col justify-center items-center text-zinc-200">
+			<li class="py-1">Home</li>
+			<li class="py-1">Profile</li>
 			<li class="py-1" on:click={() => {coinDialog.showModal()}}>Preferred Coin</li>
-			<li class="py-1">User Option 4</li>
+			<li class="py-1">Logout</li>
 		</ul>
 	{/if}
 </nav>
