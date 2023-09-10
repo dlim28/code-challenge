@@ -1,5 +1,6 @@
 <script lang="ts">
 	import "../app.css"
+	import Dialog from "../lib/components/dialog.svelte"
 </script>
 
 <div class="rounded shadow-lg">
@@ -32,3 +33,5 @@
 		</div>
 	</div>
 </div>
+
+<Dialog />

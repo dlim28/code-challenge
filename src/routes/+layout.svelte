@@ -11,7 +11,7 @@
 		<ul transition:slide>
 			<li>User Option 1</li>
 			<li>User Option 2</li>
-			<li>Preferred Coin</li>
+			<li on:click={() => {console.log('open dialog')}}>Preferred Coin</li>
 			<li>User Option 4</li>
 		</ul>
 	{/if}
