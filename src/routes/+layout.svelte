@@ -17,10 +17,10 @@
 	</button>
 	{#if !hidden}
 		<ul transition:slide class="text-zinc-200">
-			<li>User Option 1</li>
-			<li>User Option 2</li>
-			<li on:click={() => {coinDialog.showModal()}}>Preferred Coin</li>
-			<li>User Option 4</li>
+			<li class="py-1">User Option 1</li>
+			<li class="py-1">User Option 2</li>
+			<li class="py-1" on:click={() => {coinDialog.showModal()}}>Preferred Coin</li>
+			<li class="py-1">User Option 4</li>
 		</ul>
 	{/if}
 </nav>
