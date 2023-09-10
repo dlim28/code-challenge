@@ -1,4 +1,6 @@
 <script>
+	import { preferredCoinData } from "$lib/store.ts";
+
 	let preferredCoin;
 	export let dialogId;
 	export let closeModal;
@@ -9,6 +11,7 @@
 		.then(data => {
 			console.log(data)
 			window.localStorage.setItem("preferredCoin", preferredCoin)
+			$preferredCoinData = data
 			closeModal()
 		}).catch(error => {
 			console.log(error)
