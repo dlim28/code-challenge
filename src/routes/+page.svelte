@@ -10,6 +10,8 @@
 		if(!isMobileScreen()) {
 			const listOfCoins = await fetch(`https://trade.cointree.com/api/prices/AUD/`)
 			return await listOfCoins.json();
+		} else {
+			return []
 		}
 	}
 	$: isMobileScreen = () => {return window.innerWidth < 1280}
@@ -20,11 +22,39 @@
 	<h1>Waiting</h1>
 	{:then data}
 		<div class="xl:grid xl:grid-cols-2 xl:h-screen xl:mb-8">
-			<div class="xl:col-start-1 overflow-hidden bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-4 border border-gray-100">
-				<div class="flex flex-col justify-center items-center px-4 py-6">
+			<div class="xl:col-start-1 xl:grid xl:grid-cols-2 overflow-hidden bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-4 border border-gray-100">
+				<div class="flex flex-col justify-center items-center px-4 py-6 xl:grid-start-1">
 					<img src="src/images/user-icon.svg" alt="A Placeholder" width="100" height="100">
 					<h3 class="text-lg font-semibold leading-6 text-gray-900">{data.buy}</h3>
 					<h4 class="font-semibold text-xl italic">{data.ask.toFixed(3)}</h4>
+				</div>
+				<div class="hidden xl:flex flex-col justify-center items-center px-4 py-6 xl:grid-start-2">
+					<div class="px-2 py-2 space-y-2 w-full">
+						<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+							<div class="min-w-0 flex flex-col text-center p-4">
+								<p>Bid</p>
+								<p class="italic">{data.bid.toFixed(3)}</p>
+							</div>
+						</div>
+						<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+							<div class="min-w-0 flex flex-col text-center p-4">
+								<p>Rate</p>
+								<p class="italic text-sm truncate">{data.rate}</p>
+							</div>
+						</div>
+						<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+							<div class="min-w-0 flex flex-col text-center p-4">
+								<p>Spot Rate</p>
+								<p class="italic">{data.spotRate.toFixed(3)}</p>
+							</div>
+						</div>
+						<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+							<div class="min-w-0 flex flex-col text-center p-4">
+								<p>Date</p>
+								<p class="italic">{new Date(data.timestamp).toDateString()}</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -58,7 +88,7 @@
 			</div>
 
 			<!--  Table for desktop view  -->
-			<div class="invisible xl:visible xl:h-screen col-start-2 row-start-1 row-span-2 bg-white shadow-xl rounded-xl mx-2 mt-4 xl:mx-4 border border-gray-100">
+			<div class="hidden xl:inline xl:h-screen col-start-2 row-start-1 row-span-2 bg-white shadow-xl rounded-xl mx-2 mt-4 xl:mx-4 border border-gray-100">
 				<div class="h-screen overflow-y-auto px-8 rounded-xl">
 					<table class="min-w-full divide-y divide-gray-300">
 						<thead class="sticky top-0 bg-white w-full">
