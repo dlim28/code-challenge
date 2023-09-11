@@ -8,12 +8,6 @@
 	}
 </script>
 
-<style>
-	body {
-		background: #f3f4f6;
-	}
-</style>
-
 {#if browser}
 	{#await getCoin(window.localStorage.getItem('preferredCoin') ? window.localStorage.getItem('preferredCoin') : 'btc')}
 	<h1>Waiting</h1>

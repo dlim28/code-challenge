@@ -11,12 +11,12 @@
 	})
 </script>
 
-<nav class="flex flex-col py-4 justify-center items-center bg-green-600">
+<nav class="flex flex-col py-4 justify-center items-center bg-white shadow">
 	<button class="w-1/3 flex items-center justify-center" on:click={() => {hidden = !hidden}}>
 		<img src="/src/images/user-icon.svg" alt="A user profile icon" width="50" height="50" />
 	</button>
 	{#if !hidden}
-		<ul transition:slide class="flex flex-col justify-center items-center text-zinc-200">
+		<ul transition:slide class="flex flex-col justify-center items-center">
 			<li class="py-1">Home</li>
 			<li class="py-1">Profile</li>
 			<li class="py-1" on:click={() => {coinDialog.showModal()}}>Preferred Coin</li>
