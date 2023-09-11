@@ -28,7 +28,6 @@
 			for (let i = 0; i < 4; i++) {
 				 recommended.push(arrayOfCoins[(Math.floor(Math.random() * arrayOfCoins.length))])
 			 }
-			 console.log(recommended)
 			$recommendedCoins = recommended
 		})
 	}
@@ -41,7 +40,7 @@
 	{#await getCoin(window.localStorage.getItem('preferredCoin') ? window.localStorage.getItem('preferredCoin') : 'btc')}
 	<h1>Waiting</h1>
 	{:then data}
-		<div class="xl:grid xl:grid-cols-2 xl:h-screen xl:mb-8">
+		<div class="xl:grid xl:grid-cols-2 xl:grid-rows-2 xl:h-screen xl:mb-8">
 			<div class="xl:col-start-1 xl:grid xl:grid-cols-2 overflow-hidden bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-4 border border-gray-100">
 				<div class="flex flex-col justify-center items-center px-4 py-6 xl:grid-start-1">
 					<img src="src/images/user-icon.svg" alt="A Placeholder" width="100" height="100">
@@ -78,14 +77,14 @@
 				</div>
 			</div>
 
-			<div class="xl:col-start-1 overflow-hidden bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-2 xl:mt-4 border border-gray-100">
-				<div class="grid grid-cols-2 px-2 py-2 gap-x-2 gap-y-2">
+			<div class="xl:col-start-1 bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-2 xl:mt-4 border border-gray-100">
+				<div class="grid grid-cols-2 grid-rows-2 px-2 py-2 gap-x-2 gap-y-2">
 					{#if hasData && !isMobileScreen()}
 						{#each $recommendedCoins as coin}
 							<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
 								<div class="min-w-0 flex flex-col text-center p-4">
 									<p>{coin.buy}</p>
-										<p class="italic">${coin.ask.toFixed(3)}</p>
+									<p class="italic">${coin.ask.toFixed(3)}</p>
 								</div>
 							</div>
 						{/each}
