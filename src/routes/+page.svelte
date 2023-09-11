@@ -1,8 +1,14 @@
-<script lang="ts">
+<script>
 	import "../app.css"
 	import {browser} from "$app/environment";
+	import { recommendedCoins } from "$lib/store.ts";
+	import {onMount} from "svelte";
 
-	const getCoin = async (coin: string | null) => {
+	onMount(() => {
+		getRecommendedCoins()
+	})
+
+	const getCoin = async (coin) => {
 		const res = await fetch(`https://trade.cointree.com/api/prices/AUD/${coin}`)
 		return await res.json();
 	}
@@ -14,7 +20,21 @@
 			return []
 		}
 	}
+
+	const getRecommendedCoins = async () => {
+		await getListOfCoins().then(arrayOfCoins => {
+			let recommended = []
+
+			for (let i = 0; i < 4; i++) {
+				 recommended.push(arrayOfCoins[(Math.floor(Math.random() * arrayOfCoins.length))])
+			 }
+			 console.log(recommended)
+			$recommendedCoins = recommended
+		})
+	}
+
 	$: isMobileScreen = () => {return window.innerWidth < 1280}
+	$: hasData = $recommendedCoins.length > 0
 </script>
 
 {#if browser}
@@ -60,30 +80,41 @@
 
 			<div class="xl:col-start-1 overflow-hidden bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-2 xl:mt-4 border border-gray-100">
 				<div class="grid grid-cols-2 px-2 py-2 gap-x-2 gap-y-2">
-					<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
-						<div class="min-w-0 flex flex-col text-center p-4">
-							<p>Bid</p>
-							<p class="italic">{data.bid.toFixed(3)}</p>
+					{#if hasData && !isMobileScreen()}
+						{#each $recommendedCoins as coin}
+							<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+								<div class="min-w-0 flex flex-col text-center p-4">
+									<p>{coin.buy}</p>
+										<p class="italic">${coin.ask.toFixed(3)}</p>
+								</div>
+							</div>
+						{/each}
+					{:else}
+						<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+							<div class="min-w-0 flex flex-col text-center p-4">
+								<p>Bid</p>
+								<p class="italic">{data.bid.toFixed(3)}</p>
+							</div>
 						</div>
-					</div>
-					<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
-						<div class="min-w-0 flex flex-col text-center p-4">
-							<p>Rate</p>
-							<p class="italic text-sm truncate">{data.rate}</p>
+						<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+							<div class="min-w-0 flex flex-col text-center p-4">
+								<p>Rate</p>
+								<p class="italic text-sm truncate">{data.rate}</p>
+							</div>
 						</div>
-					</div>
-					<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
-						<div class="min-w-0 flex flex-col text-center p-4">
-							<p>Spot Rate</p>
-							<p class="italic">{data.spotRate.toFixed(3)}</p>
+						<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+							<div class="min-w-0 flex flex-col text-center p-4">
+								<p>Spot Rate</p>
+								<p class="italic">{data.spotRate.toFixed(3)}</p>
+							</div>
 						</div>
-					</div>
-					<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
-						<div class="min-w-0 flex flex-col text-center p-4">
-							<p>Date</p>
-							<p class="italic">{new Date(data.timestamp).toDateString()}</p>
+						<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+							<div class="min-w-0 flex flex-col text-center p-4">
+								<p>Date</p>
+								<p class="italic">{new Date(data.timestamp).toDateString()}</p>
+							</div>
 						</div>
-					</div>
+					{/if}
 				</div>
 			</div>
 
