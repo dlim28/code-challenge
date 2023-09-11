@@ -19,7 +19,7 @@
 	{#await getCoin(window.localStorage.getItem('preferredCoin') ? window.localStorage.getItem('preferredCoin') : 'btc')}
 	<h1>Waiting</h1>
 	{:then data}
-		<div class="xl:grid xl:grid-cols-2">
+		<div class="xl:grid xl:grid-cols-2 xl:h-screen xl:mb-8">
 			<div class="xl:col-start-1 overflow-hidden bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-4 border border-gray-100">
 				<div class="flex flex-col justify-center items-center px-4 py-6">
 					<img src="src/images/user-icon.svg" alt="A Placeholder" width="100" height="100">
@@ -58,7 +58,7 @@
 			</div>
 
 			<!--  Table for desktop view  -->
-			<div class="invisible xl:visible xl:col-start-2 xl:row-start-1 xl:row-span-2 bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-4 border border-gray-100">
+			<div class="invisible xl:visible xl:h-screen col-start-2 row-start-1 row-span-2 bg-white shadow-xl rounded-xl mx-2 mt-4 xl:mx-4 border border-gray-100">
 				<div class="h-screen overflow-y-auto px-8 rounded-xl">
 					<table class="min-w-full divide-y divide-gray-300">
 						<thead class="sticky top-0 bg-white w-full">
@@ -67,9 +67,6 @@
 							<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ask</th>
 							<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Bid</th>
 							<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Rate</th>
-							<th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
-								<span class="sr-only">Edit</span>
-							</th>
 						</tr>
 						</thead>
 						<tbody class="divide-y divide-gray-200">
