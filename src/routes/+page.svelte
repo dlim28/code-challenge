@@ -41,7 +41,7 @@
 	<h1>Waiting</h1>
 	{:then data}
 		<div class="xl:grid xl:grid-cols-2 xl:grid-rows-2 xl:h-screen xl:mb-8">
-			<div class="xl:col-start-1 xl:grid xl:grid-cols-2 overflow-hidden bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-4 border border-gray-100">
+			<div class="xl:col-start-1 xl:grid xl:grid-cols-2 overflow-hidden bg-gradient-to-r from-white to-gray-50 shadow-xl rounded-xl mx-2 xl:mx-4 mt-4 border-4 border-gray-100">
 				<div class="flex flex-col justify-center items-center px-4 py-6 xl:grid-start-1">
 					<img src="src/images/user-icon.svg" alt="A Placeholder" width="100" height="100">
 					<h3 class="text-lg font-semibold leading-6 text-gray-900">{$preferredCoinData?.buy || data.buy}</h3>
@@ -77,7 +77,7 @@
 				</div>
 			</div>
 
-			<div class="xl:col-start-1 bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-2 xl:mt-4 border border-gray-100">
+			<div class="xl:col-start-1 bg-gradient-to-r from-white to-gray-50 shadow-xl rounded-xl mx-2 xl:mx-4 mt-2 xl:mt-4 border-4 border-gray-100">
 				<div class="grid grid-cols-2 grid-rows-2 px-2 py-2 gap-x-2 gap-y-2">
 					{#if hasData && !isMobileScreen()}
 						{#each $recommendedCoins as coin}
@@ -118,10 +118,10 @@
 			</div>
 
 			<!--  Table for desktop view  -->
-			<div class="hidden xl:inline xl:h-screen col-start-2 row-start-1 row-span-2 bg-white shadow-xl rounded-xl mx-2 mt-4 xl:mx-4 border border-gray-100">
+			<div class="hidden xl:inline xl:h-screen col-start-2 row-start-1 row-span-2 bg-gradient-to-r from-white to-gray-50 shadow-xl rounded-xl mx-2 mt-4 xl:mx-4 border-4 border-gray-100">
 				<div class="h-screen overflow-y-auto px-8 rounded-xl">
 					<table class="min-w-full divide-y divide-gray-300">
-						<thead class="sticky top-0 bg-white w-full">
+						<thead class="sticky top-0 bg-gradient-to-r from-white to-gray-50 w-full">
 						<tr>
 							<th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Name</th>
 							<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ask</th>
