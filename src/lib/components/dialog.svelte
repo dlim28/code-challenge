@@ -40,9 +40,9 @@
 				<!-- 	Modal Body -->
 				<div class="bg-white px-4 py-4">
 					<ul class="flex flex-col justify-center">
-						<li class="flex justify-center py-4 rounded-xl transition duration-300 hover:bg-gray-200" class:selected={preferredCoin === 'btc'} on:click={() => {preferredCoin = 'btc'}}>BTC</li>
-						<li class="flex justify-center py-4 rounded-xl transition duration-300 hover:bg-gray-200" class:selected={preferredCoin === 'eth'} on:click={() => {preferredCoin = 'eth'}}>ETH</li>
-						<li class="flex justify-center py-4 rounded-xl transition duration-300 hover:bg-gray-200" class:selected={preferredCoin === 'xrp'} on:click={() => {preferredCoin = 'xrp'}}>XRP</li>
+						<li class="flex justify-center py-4 rounded-xl transition duration-300 xl:hover:bg-gray-200" class:selected={preferredCoin === 'btc'} on:click={() => {preferredCoin = 'btc'}}>BTC</li>
+						<li class="flex justify-center py-4 rounded-xl transition duration-300 xl:hover:bg-gray-200" class:selected={preferredCoin === 'eth'} on:click={() => {preferredCoin = 'eth'}}>ETH</li>
+						<li class="flex justify-center py-4 rounded-xl transition duration-300 xl:hover:bg-gray-200" class:selected={preferredCoin === 'xrp'} on:click={() => {preferredCoin = 'xrp'}}>XRP</li>
 					</ul>
 				</div>
 				<div class="bg-gray-50 flex py-3 px-6 gap-x-2">

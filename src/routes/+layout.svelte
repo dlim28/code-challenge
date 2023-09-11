@@ -19,19 +19,12 @@
 		</svg>
 	</button>
 	{#if !hidden}
-		<ul class="hidden xl:block absolute top-12 right-6 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-			<li class="cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200" role="menuitem" tabindex="-1" id="user-menu-item-0">Profile</li>
-			<li class="cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</li>
-			<li class="cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200" on:click={() => {coinDialog.showModal()}}>Preferred Coin</li>
-			<li class="cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</li>
+		<ul transition:slide class="flex flex-col justify-center items-center xl:block xl:absolute xl:top-12 xl:right-6 xl:z-10 xl:mt-2 xl:w-48 xl:origin-top-right rounded-md xl:bg-white py-1 xl:shadow-lg xl:ring-1 xl:ring-black xl:ring-opacity-5 xl:focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+			<li class="cursor-pointer block px-4 py-2 text-sm text-gray-700 xl:hover:bg-gray-200" role="menuitem" tabindex="-1" id="user-menu-item-0">Profile</li>
+			<li class="cursor-pointer block px-4 py-2 text-sm text-gray-700 xl:hover:bg-gray-200" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</li>
+			<li class="cursor-pointer block px-4 py-2 text-sm text-gray-700 xl:hover:bg-gray-200" on:click={() => {coinDialog.showModal()}}>Preferred Coin</li>
+			<li class="cursor-pointer block px-4 py-2 text-sm text-gray-700 xl:hover:bg-gray-200" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</li>
 		</ul>
-
-<!-- 		<ul transition:slide class="flex flex-col justify-center items-center"> -->
-<!-- 			<li class="py-1">Home</li> -->
-<!-- 			<li class="py-1">Profile</li> -->
-<!-- 			<li class="py-1" on:click={() => {coinDialog.showModal()}}>Preferred Coin</li> -->
-<!-- 			<li class="py-1">Logout</li> -->
-<!-- 		</ul> -->
 	{/if}
 </nav>
 
