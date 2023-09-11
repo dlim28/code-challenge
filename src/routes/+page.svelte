@@ -28,27 +28,27 @@
 					<h3 class="text-lg font-semibold leading-6 text-gray-900">{data.buy}</h3>
 					<h4 class="font-semibold text-xl italic">{data.ask.toFixed(3)}</h4>
 				</div>
-				<div class="hidden xl:flex flex-col justify-center items-center px-4 py-6 xl:grid-start-2">
+				<div class="hidden xl:flex flex-col justify-center items-center px-4 xl:grid-start-2">
 					<div class="px-2 py-2 space-y-2 w-full">
-						<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+						<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
 							<div class="min-w-0 flex flex-col text-center p-4">
 								<p>Bid</p>
 								<p class="italic">{data.bid.toFixed(3)}</p>
 							</div>
 						</div>
-						<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+						<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
 							<div class="min-w-0 flex flex-col text-center p-4">
 								<p>Rate</p>
 								<p class="italic text-sm truncate">{data.rate}</p>
 							</div>
 						</div>
-						<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+						<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
 							<div class="min-w-0 flex flex-col text-center p-4">
 								<p>Spot Rate</p>
 								<p class="italic">{data.spotRate.toFixed(3)}</p>
 							</div>
 						</div>
-						<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+						<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
 							<div class="min-w-0 flex flex-col text-center p-4">
 								<p>Date</p>
 								<p class="italic">{new Date(data.timestamp).toDateString()}</p>
@@ -60,25 +60,25 @@
 
 			<div class="xl:col-start-1 overflow-hidden bg-white shadow-xl rounded-xl mx-2 xl:mx-4 mt-2 xl:mt-4 border border-gray-100">
 				<div class="grid grid-cols-2 px-2 py-2 gap-x-2 gap-y-2">
-					<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+					<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
 						<div class="min-w-0 flex flex-col text-center p-4">
 							<p>Bid</p>
 							<p class="italic">{data.bid.toFixed(3)}</p>
 						</div>
 					</div>
-					<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+					<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
 						<div class="min-w-0 flex flex-col text-center p-4">
 							<p>Rate</p>
 							<p class="italic text-sm truncate">{data.rate}</p>
 						</div>
 					</div>
-					<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+					<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
 						<div class="min-w-0 flex flex-col text-center p-4">
 							<p>Spot Rate</p>
 							<p class="italic">{data.spotRate.toFixed(3)}</p>
 						</div>
 					</div>
-					<div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
+					<div class="relative flex items-center justify-center space-x-3 rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
 						<div class="min-w-0 flex flex-col text-center p-4">
 							<p>Date</p>
 							<p class="italic">{new Date(data.timestamp).toDateString()}</p>
