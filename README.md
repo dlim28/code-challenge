@@ -2,6 +2,13 @@
 
 ## Deployed on https://code-challenge-six.vercel.app/
 
+## Instructions
+> 1. git clone git@github.com:dlim28/code-challenge.git  
+> 2. cd code-challenge  
+> 3. npm install 
+> 4. npm run dev  
+> 5. Enjoy!
+
 # Design and Approach
 Since I have opted for the use of tailwind and the svelte framework I started off with a mobile design first since tailwind is a mobile
 first design framework  
@@ -52,6 +59,7 @@ Once selected, just like the mobile view, it will be stored on localStorage and 
   * Ideally all coins on the table and the recommended should have icons. It adds color and vibrancy to an otherwise drab page
 
 ## Things i'd like to do if I had more time (overall)
+* Write some unit tests - probably a weak point for me
 * Add proper error handling
   * In svelte having the await blocks are useful when dealing with promises. However currently they just show some text while pending and when something goes wrong
   * Ideally I would prefer to have the cards styled to show an error (rather than the page show the error)
@@ -61,4 +69,4 @@ Once selected, just like the mobile view, it will be stored on localStorage and 
 * Work on animations
   * In both desktop and mobile views there should be some animations or transitions to show users where to point their attention.
     * This is mainly more of a desktop UX as they are on larger screens where information can overload a user
-* Have a better color palette. I didn't realise that there was a [mediakit](https://www.cointree.com/company/media-kit/) that until I was writing this
+* Have a better color palette. I didn't realise that there was a [mediakit](https://www.cointree.com/company/media-kit/) until I was writing this
