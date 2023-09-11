@@ -9,7 +9,6 @@
 		fetch(`https://trade.cointree.com/api/prices/AUD/${preferredCoin}`)
 		.then(res => res.json())
 		.then(data => {
-			console.log(data)
 			window.localStorage.setItem("preferredCoin", preferredCoin)
 			$preferredCoinData = data
 			closeModal()
